@@ -96,33 +96,39 @@ namespace DataStructure
         }
 
         //Добавление значения по индексу
-        //подумать еще хорошенько ПЕРЕПИСАТЬ!!!!!
         public void AddItemByIndex(int index, int value)
         {
-            if (_array.Length <= Length)
+            if (index > Length || index < 0)
             {
-                IncreaseLength();
-            }
-
-            if (index == 0)
-            {
-                DisplacementRight(index);
-                _array[index] = value;
-            }
-            else if (index == Length)
-            {
-                _array[index] = value;
+                throw new IndexOutOfRangeException();
             }
             else
             {
-                for (int i = Length; i > index; i--)
+                if (_array.Length <= Length)
                 {
-                    _array[i] = _array[i - 1];
+                    IncreaseLength();
                 }
-                _array[index] = value;
-            }
 
-            Length++;
+                if (index == 0)
+                {
+                    DisplacementRight(index);
+                    _array[index] = value;
+                }
+                else if (index == Length)
+                {
+                    _array[index] = value;
+                }
+                else
+                {
+                    for (int i = Length; i > index; i--)
+                    {
+                        _array[i] = _array[i - 1];
+                    }
+                    _array[index] = value;
+                }
+
+                Length++;
+            }
         }
 
         //Получить длину списка
@@ -160,44 +166,59 @@ namespace DataStructure
         //Удаление по индексу элемента Переписать!!!
         public void RemoveFromIndexItem(int index)
         {
-            if (_array.Length <= Length / 2 - 1)
+            if(index > Length || index < 0)
             {
-                DecreaseLength();
-            }
-
-            if (index == 0)
-            {
-                for (int i = 0; i < Length - 1; i++)
-                {
-                    _array[i] = _array[i + 1];
-                }
-            }
-            else if (index == Length - 1)
-            {
-                Length--;
+                throw new IndexOutOfRangeException();
             }
             else
             {
-                int[] newArray = new int[_array.Length - 1];
-                for (int i = 0; i < index; i++)
+                if (_array.Length <= Length / 2 - 1)
                 {
-                    newArray[i] = _array[i];
+                    DecreaseLength();
                 }
 
-                for (int j = index + 1; j < Length; j++)
+                if (index == 0)
                 {
-                    newArray[j - 1] = _array[j];
+                    for (int i = 0; i < Length - 1; i++)
+                    {
+                        _array[i] = _array[i + 1];
+                    }
                 }
-                _array = newArray;
+                else if (index == Length - 1)
+                {
+                    Length--;
+                }
+                else
+                {
+                    int[] newArray = new int[_array.Length - 1];
+                    for (int i = 0; i < index; i++)
+                    {
+                        newArray[i] = _array[i];
+                    }
+
+                    for (int j = index + 1; j < Length; j++)
+                    {
+                        newArray[j - 1] = _array[j];
+                    }
+                    _array = newArray;
+                }
+
+                Length--;
             }
-
-            Length--;
+            
         }
 
         //Доступ по индексу
         public int AccessByIndex(int i)
         {
-            return _array[i];
+            if (i > Length || i < 0)
+            {
+                throw new IndexOutOfRangeException();
+            }
+            else
+            {
+                return _array[i];
+            }
         }
 
         //Доступ по значению
@@ -348,85 +369,109 @@ namespace DataStructure
         //добавление массива по индексу
         public void AddArrayByIndex(int[] array, int index)
         {
-            if (_array.Length <= Length + array.Length)
+            if (index > Length || index < 0)
             {
-                IncreaseLength();
+                throw new IndexOutOfRangeException();
             }
-            for (int i = 0; i < array.Length; i++)
+            else
             {
-                DisplacementRight(index);
-                _array[index] = array[i];
-                Length++;
+                if (_array.Length <= Length + array.Length)
+                {
+                    IncreaseLength();
+                }
+                for (int i = 0; i < array.Length; i++)
+                {
+                    DisplacementRight(index);
+                    _array[index] = array[i];
+                    Length++;
+                }
             }
         }
 
         //удаление из конца N элементов
-        public void RemoveEndItems(int quantity)
+        public void RemoveEndItems(int quantity = 1)
         {
-            if (_array.Length <= Length / 2 - 1)
+            if (index > Length || index < 0)
             {
-                DecreaseLength();
+                throw new IndexOutOfRangeException();
             }
-
-            for (int i = 0; i < quantity; i++)
-            {
-                RemoveFromIndexItem(Length - 1);
-            }
-        }
-
-        //удаление из начала N элементов
-        public void RemoveSrartItems(int quantity)
-        {
-            if (_array.Length <= Length / 2 - 1)
-            {
-                DecreaseLength();
-            }
-
-            for (int i = 0; i < quantity; i++)
-            {
-                RemoveFromIndexItem(0);
-            }
-        }
-
-        //удаление по индексу N элементов
-        public void RemoveFromIndexItems(int index, int quantity)
-        {
-            for (int i = 0; i < quantity; i++)
+            else
             {
                 if (_array.Length <= Length / 2 - 1)
                 {
                     DecreaseLength();
                 }
 
-                if (index == 0)
+                RemoveFromIndexItem(Length - quantity);
+            }
+        }
+
+        //удаление из начала N элементов
+        public void RemoveSrartItems(int quantity)
+        {
+            if (quantity > Length)
+            {
+                throw new IndexOutOfRangeException();
+            }
+            else
+            {
+                if (_array.Length <= Length / 2 - 1)
                 {
-                    for (int k = 0; k < Length - 1; k++)
-                    {
-                        _array[k] = _array[k + 1];
-                    }
+                    DecreaseLength();
                 }
-                else if (index == Length)
+
+                for (int i = 0; i < quantity; i++)
                 {
+                    RemoveFromIndexItem(0);
+                }
+            }
+        }
+
+        //удаление по индексу N элементов
+        public void RemoveFromIndexItems(int index, int quantity = 1)
+        {
+            if (index > Length || index < 0 || quantity > Length)
+            {
+                throw new IndexOutOfRangeException();
+            }
+            else
+            {
+                for (int i = 0; i < quantity; i++)
+                {
+                    if (_array.Length <= Length / 2 - 1)
+                    {
+                        DecreaseLength();
+                    }
+
+                    if (index == 0)
+                    {
+                        for (int k = 0; k < Length - 1; k++)
+                        {
+                            _array[k] = _array[k + 1];
+                        }
+                    }
+                    else if (index == Length)
+                    {
+                        Length--;
+                    }
+                    else
+                    {
+                        int[] newArray = new int[_array.Length - 1];
+                        for (int j = 0; j < index; j++)
+                        {
+                            newArray[j] = _array[j];
+                        }
+
+                        for (int l = index + 1; l < Length; l++)
+                        {
+                            newArray[l - 1] = _array[l];
+                        }
+                        _array = newArray;
+                    }
+
                     Length--;
                 }
-                else
-                {
-                    int[] newArray = new int[_array.Length - 1];
-                    for (int j = 0; j < index; j++)
-                    {
-                        newArray[j] = _array[j];
-                    }
-
-                    for (int l = index + 1; l < Length; l++)
-                    {
-                        newArray[l - 1] = _array[l];
-                    }
-                    _array = newArray;
-                }
-
-                Length--;
             }
-
         }
 
         public override string ToString()
