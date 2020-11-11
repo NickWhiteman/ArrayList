@@ -41,9 +41,16 @@ namespace DataStructure
 
         public ArrayList(int[] array)
         {
-            _array = new int[(int)(array.Length * _NumberLayoutPlace)];
-            Length = array.Length;
-            Array.Copy(array, _array, array.Length);
+            if(array.Length == 0)
+            {
+                throw new Exception("Your array is empty enter values");
+            }
+            else
+            {
+                _array = new int[(int)(array.Length * _NumberLayoutPlace)];
+                Length = array.Length;
+                Array.Copy(array, _array, array.Length);
+            }
         }
 
         public ArrayList(int i)
@@ -98,17 +105,17 @@ namespace DataStructure
         //Добавление значения по индексу
         public void AddItemByIndex(int index, int value)
         {
+            if (_array.Length <= Length)
+            {
+                IncreaseLength();
+            }
+
             if (index > Length || index < 0)
             {
                 throw new IndexOutOfRangeException();
             }
             else
             {
-                if (_array.Length <= Length)
-                {
-                    IncreaseLength();
-                }
-
                 if (index == 0)
                 {
                     DisplacementRight(index);
@@ -117,6 +124,10 @@ namespace DataStructure
                 else if (index == Length)
                 {
                     _array[index] = value;
+                }
+                else if (Length == 0)
+                {
+                    _array[0] = value;
                 }
                 else
                 {
@@ -391,7 +402,7 @@ namespace DataStructure
         //удаление из конца N элементов
         public void RemoveEndItems(int quantity = 1)
         {
-            if (index > Length || index < 0)
+            if (quantity > Length || quantity < 0)
             {
                 throw new IndexOutOfRangeException();
             }

@@ -3,6 +3,10 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArrayList", "ArrayList\ArrayList.csproj", "{2EA96BFF-ACF8-4906-A7F8-8845BC6A7EA5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArrayList.Test", "ArrayList.Test\ArrayList.Test.csproj", "{A3AB893F-5D35-4702-A8F5-377216235EE7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestingMethodOnProject", "..\TestingMethodOnProject\TestingMethodOnProject\TestingMethodOnProject.csproj", "{C07918AD-0FFA-41FB-906B-1BB206100269}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,5 +17,13 @@ Global
 		{2EA96BFF-ACF8-4906-A7F8-8845BC6A7EA5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2EA96BFF-ACF8-4906-A7F8-8845BC6A7EA5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2EA96BFF-ACF8-4906-A7F8-8845BC6A7EA5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A3AB893F-5D35-4702-A8F5-377216235EE7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A3AB893F-5D35-4702-A8F5-377216235EE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A3AB893F-5D35-4702-A8F5-377216235EE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A3AB893F-5D35-4702-A8F5-377216235EE7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C07918AD-0FFA-41FB-906B-1BB206100269}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C07918AD-0FFA-41FB-906B-1BB206100269}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C07918AD-0FFA-41FB-906B-1BB206100269}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C07918AD-0FFA-41FB-906B-1BB206100269}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

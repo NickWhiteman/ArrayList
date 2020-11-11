@@ -1,22 +1,31 @@
-﻿<Properties GitUserInfo="UsingMD">
-  <MonoDevelop.Ide.Workbench>
+﻿<Properties GitUserInfo="UsingMD" StartupConfiguration="{C07918AD-0FFA-41FB-906B-1BB206100269}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="ArrayList.Test/ArrayListTest.cs">
     <Files>
-      <File FileName="ArrayList/Class1.cs" Line="9" Column="48" />
+      <File FileName="ArrayList/ArrayList.cs" Line="46" Column="1" />
+      <File FileName="ArrayList.Test/ArrayListTest.cs" Line="65" Column="1" />
+      <File FileName="../TestingMethodOnProject/TestingMethodOnProject/Program.cs" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="ArrayList" expanded="True" />
+          <Node name="ArrayList" expanded="True">
+            <Node name="ArrayList" expanded="True" />
+            <Node name="ArrayList.Test" expanded="True">
+              <Node name="ArrayListTest.cs" selected="True" />
+            </Node>
+            <Node name="TestingMethodOnProject" expanded="True" />
+          </Node>
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.ArrayList.Test PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <DisabledProjects>
     <String>../ArrayList1/DataStructor.csproj</String>
   </DisabledProjects>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.ArrayList FirstBuild="True" />
+  <MonoDevelop.Ide.ItemProperties.TestingMethodOnProject PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
