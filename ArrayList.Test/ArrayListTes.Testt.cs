@@ -4,13 +4,12 @@ using System;
 
 
 namespace ArrayListTest.Test
-{
-    [TestFixture]
+{ 
     public class TestsArrayList
     {
 
         int[] arrayMock;
-        //int[] expMock;
+
         void SetMock(int n)
         {
             switch (n)
@@ -31,27 +30,6 @@ namespace ArrayListTest.Test
                     break;
             }
         }
-
-        //void expectedMock(int m)
-        //{
-        //    switch (m)
-        //    {
-        //        case 1:
-        //            expMock = new int[] { 1, 2, 4, 6, 3 };
-        //            break;
-        //        case 2:
-        //            expMock = new int[] { 3, 0, 4, 2 };
-        //            break;
-        //        case 3:
-        //            expMock = new int[] { 12, 43 };
-        //            break;
-        //        case 4:
-        //            expMock = new int[] { 1, 3, 6, 3, 12, 13, 23 };
-        //            break;
-        //        default:
-        //            break;
-        //    }
-        //}
 
 
 
@@ -173,12 +151,12 @@ namespace ArrayListTest.Test
         [TestCase(2, 2, 4)]
         [TestCase(4, 0, 12)]
 
-        public void AccessByIndex(int n, int index, int expectedNumber)
+        public void AccessByIndex(int n, int i, int expectedNumber)
         {
             SetMock(n);
             ArrayList actual = new ArrayList(arrayMock);
             int expected = expectedNumber;
-            actual.AccessByIndex(index);
+            actual.AccessByIndex(i);
 
             Assert.AreEqual(expected, actual);
         }
@@ -333,7 +311,7 @@ namespace ArrayListTest.Test
 
 
 
-        [TestCase(1, new int[] { 12, 2 }, 1, new int[] { 1, 2, 12, 4, 6, 3 })]
+        [TestCase(1, new int[] { 12, 2 }, 1, new int[] { 1, 2, 12, 2, 4, 6, 3 })]
         [TestCase(2, new int[] { 1, 4 }, 0, new int[] { 4, 1, 3, 0, 4, 2 })]
         [TestCase(4, new int[] { 23, 13 }, 4, new int[] { 1, 3, 6, 3, 13, 23, 12, 13, 23 })]
 

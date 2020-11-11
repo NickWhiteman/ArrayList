@@ -2,9 +2,9 @@
   <MonoDevelop.Ide.ItemProperties.ArrayListTest.Test PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.Workbench ActiveDocument="ArrayList.Test/ArrayListTes.Testt.cs">
     <Files>
-      <File FileName="ArrayList/ArrayList.cs" Line="178" Column="40" />
-      <File FileName="ArrayList.Test/ArrayListTes.Testt.cs" Line="159" Column="40" />
-      <File FileName="../TestingMethodOnProject/TestingMethodOnProject/Program.cs" Line="1" Column="1" />
+      <File FileName="ArrayList/ArrayList.cs" Line="227" Column="1" />
+      <File FileName="ArrayList.Test/ArrayListTes.Testt.cs" Line="227" Column="1" />
+      <File FileName="../TestingMethodOnProject/TestingMethodOnProject/Program.cs" Line="18" Column="56" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -18,14 +18,18 @@
           </Node>
         </State>
       </Pad>
+      <Pad Id="MonoDevelop.Debugger.WatchPad">
+        <State>
+          <Value>expected</Value>
+          <Value>actual</Value>
+        </State>
+      </Pad>
       <Pad Id="MonoDevelop.UnitTesting.TestPad">
         <State name="__root__">
-          <Node name="ArrayList" expanded="True">
+          <Node name="ArrayList" expanded="True" selected="True">
             <Node name="ArrayListTest.Test" expanded="True">
               <Node name="ArrayListTest.Test" expanded="True">
-                <Node name="TestsArrayList" expanded="True">
-                  <Node name="AddStartTest(3,5,[5, 12, 43])" selected="True" />
-                </Node>
+                <Node name="TestsArrayList" expanded="True" />
               </Node>
             </Node>
           </Node>
