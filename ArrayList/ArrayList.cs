@@ -404,7 +404,7 @@ namespace DataStructure
         {
             if (quantity > Length || quantity < 0)
             {
-                throw new IndexOutOfRangeException();
+                throw new Exception("There are fewer items in the list than you want to delete, or you used  0,  int quantity != 0, quantuty > 0");
             }
             else
             {
@@ -422,7 +422,7 @@ namespace DataStructure
         {
             if (quantity > Length)
             {
-                throw new IndexOutOfRangeException();
+                throw new IndexOutOfRangeException("There are fewer items in the list than you want to delete! quantity != Length");
             }
             else
             {
