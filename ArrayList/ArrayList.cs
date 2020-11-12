@@ -360,11 +360,13 @@ namespace DataStructure
             {
                 IncreaseLength();
             }
-            for (int i = 0; i < array.Length; i++)
-            {
-                _array[Length] = array[i];
-                Length++;
-            }
+            AddArrayByIndex(array, Length - 1);
+            Length += array.Length;
+            //for (int i = 0; i < array.Length; i++)
+            //{
+            //    _array[Length] = array[i];
+            //    Length++;
+            //}
         }
 
         //добавление массива в начало
@@ -375,10 +377,8 @@ namespace DataStructure
                 IncreaseLength();
             }
 
-            for (int i = 0; i < array.Length; i++)
-            {
-                AddStart(array[i]);
-            }
+            AddArrayByIndex(array, 0);
+            Length += array.Length;
         }
 
         //добавление массива по индексу
@@ -396,7 +396,7 @@ namespace DataStructure
                 }
                 for (int i = 0; i < array.Length; i++)
                 {
-                    DisplacementLeft(index);//was right
+                    DisplacementRight(index);
                     _array[index] = array[i];
                     Length++;
                 }
@@ -413,6 +413,7 @@ namespace DataStructure
             else
             {
                 RemoveFromIndexItems(Length - 1, quantity);
+                Length -= quantity;
                 if (_array.Length <= Length / 2 - 1)
                 {
                     DecreaseLength();
@@ -434,8 +435,9 @@ namespace DataStructure
                 {
                     DecreaseLength();
                 }
+                Length -= quantity;
 
-                
+
             }
         }
 
