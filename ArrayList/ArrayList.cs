@@ -154,9 +154,9 @@ namespace DataStructure
         }
 
         //Удаление c конца однин элемент
-        public void RemoveFromEnd(int number = 1)
+        public void RemoveFromEnd()
         {
-            if (_array.Length > Length / 2 - number)
+            if (_array.Length > Length / 2 - 1)
             {
                 DecreaseLength();
             }
@@ -220,15 +220,17 @@ namespace DataStructure
         }
 
         //Доступ по индексу
-        public int AccessByIndex(int i)
+        public int AccessByIndex(int index)
         {
-            if (i > Length || i < 0)
+            int n;
+            if (index > Length || index < 0)
             {
                 throw new IndexOutOfRangeException();
             }
             else
             {
-                return _array[i];
+                n = _array[index];
+                return n;
             }
         }
 
@@ -240,7 +242,7 @@ namespace DataStructure
             {
                 if (value == _array[i])
                 {
-                    index = i;
+                    index += i;
                 }
             }
             return index;
@@ -277,7 +279,7 @@ namespace DataStructure
             int min = _array[0];
             for (int i = 0; i < Length; i++)
             {
-                if (_array[i] <= min)
+                if (min <= _array[i])
                 {
                     min = _array[i];
                 }
@@ -413,7 +415,7 @@ namespace DataStructure
                     DecreaseLength();
                 }
 
-                RemoveFromIndexItems(Length, quantity);
+                RemoveFromIndexItems(Length - 1, quantity);
             }
         }
 

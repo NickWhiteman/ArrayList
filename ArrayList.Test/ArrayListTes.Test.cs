@@ -49,7 +49,7 @@ namespace ArrayListTest.Test
 
 
         [TestCase(1, 2, new int[] { 1, 2, 4, 6, 3, 2 })]
-        [TestCase(2, 7, new int[] { 1, 2, 7 })]
+        [TestCase(2, 7, new int[] { 3, 0, 4, 2, 7 })]
 
         public void AddTest(int n, int number, int[] expArr)
         {
@@ -149,7 +149,7 @@ namespace ArrayListTest.Test
 
         [TestCase(1, 1, 2)]
         [TestCase(2, 2, 4)]
-        [TestCase(4, 0, 12)]
+        [TestCase(4, 0, 1)]
 
         public void AccessByIndex(int n, int i, int expectedNumber)
         {
@@ -188,9 +188,9 @@ namespace ArrayListTest.Test
             SetMock(n);
             ArrayList actual = new ArrayList(arrayMock);
             int expected = expMin;
-            actual.GetMinItem();
+            int result = actual.GetMinItem();
 
-            Assert.AreEqual(expected, actual);
+            Assert.AreEqual(expected, result);
         }
 
 
@@ -204,9 +204,9 @@ namespace ArrayListTest.Test
             SetMock(n);
             ArrayList actual = new ArrayList(arrayMock);
             int expected = expMax;
-            actual.GetMaxItem();
+            int result = actual.GetMaxItem();
 
-            Assert.AreEqual(expected, actual);
+            Assert.AreEqual(expected, result);
         }
 
 
@@ -220,9 +220,9 @@ namespace ArrayListTest.Test
             SetMock(n);
             ArrayList actual = new ArrayList(arrayMock);
             int expected = expMaxIndex;
-            actual.GetMaxIndex();
+            int result = actual.GetMaxIndex();
 
-            Assert.AreEqual(expected, actual);
+            Assert.AreEqual(expected, result);
         }
 
 
@@ -236,9 +236,9 @@ namespace ArrayListTest.Test
             SetMock(n);
             ArrayList actual = new ArrayList(arrayMock);
             int expected = expMinIndex;
-            actual.GetMaxIndex();
+            int result = actual.GetMaxIndex();
 
-            Assert.AreEqual(expected, actual);
+            Assert.AreEqual(expected, result);
         }
 
 
@@ -330,7 +330,7 @@ namespace ArrayListTest.Test
 
 
         [TestCase(1, 2, new int[] { 1, 2, 4 })]
-        [TestCase(2, 4, new int[] { 4, 1 })]
+        [TestCase(4, 4, new int[] { 1, 3, 6 })]
 
         public void RemoveEndItems(int n, int quantity, int[] expArr)
         {
