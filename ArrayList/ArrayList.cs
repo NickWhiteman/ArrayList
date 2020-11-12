@@ -413,7 +413,7 @@ namespace DataStructure
                     DecreaseLength();
                 }
 
-                RemoveFromIndexItem(Length - quantity);
+                RemoveFromIndexItems(Length, quantity);
             }
         }
 
@@ -431,10 +431,8 @@ namespace DataStructure
                     DecreaseLength();
                 }
 
-                for (int i = 0; i < quantity; i++)
-                {
-                    RemoveFromIndexItem(0);
-                }
+                RemoveFromIndexItems(0, quantity);
+                
             }
         }
 
@@ -460,8 +458,9 @@ namespace DataStructure
                         {
                             _array[k] = _array[k + 1];
                         }
+                        Length--;
                     }
-                    else if (index == Length)
+                    else if (index == Length - 1)
                     {
                         Length--;
                     }
@@ -478,9 +477,9 @@ namespace DataStructure
                             newArray[l - 1] = _array[l];
                         }
                         _array = newArray;
+                        
                     }
 
-                    Length--;
                 }
             }
         }
