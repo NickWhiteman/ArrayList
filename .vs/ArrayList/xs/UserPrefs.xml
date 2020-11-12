@@ -1,27 +1,30 @@
 ﻿<Properties GitUserInfo="UsingMD" StartupConfiguration="{C07918AD-0FFA-41FB-906B-1BB206100269}|Default">
   <MonoDevelop.Ide.ItemProperties.ArrayListTest.Test PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="ArrayList/ArrayList.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="../TestingMethodOnProject/TestingMethodOnProject/Program.cs">
     <Files>
-      <File FileName="ArrayList/ArrayList.cs" Line="501" Column="43" />
-      <File FileName="../TestingMethodOnProject/TestingMethodOnProject/Program.cs" />
-      <File FileName="ArrayList.Test/ArrayListTes.Test.cs" Line="108" Column="28" />
+      <File FileName="ArrayList/ArrayList.cs" Line="336" Column="32" />
+      <File FileName="../TestingMethodOnProject/TestingMethodOnProject/Program.cs" Line="11" Column="49" />
+      <File FileName="ArrayList.Test/ArrayListTes.Test.cs" Line="103" Column="21" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="ArrayList" expanded="True">
-            <Node name="ArrayList" expanded="True">
-              <Node name="ArrayList.cs" selected="True" />
-            </Node>
+            <Node name="ArrayList" expanded="True" />
             <Node name="ArrayListTest.Test" expanded="True" />
-            <Node name="TestingMethodOnProject" expanded="True" />
+            <Node name="TestingMethodOnProject" expanded="True">
+              <Node name="Program.cs" selected="True" />
+            </Node>
           </Node>
         </State>
       </Pad>
+      <Pad Id="MonoDevelop.Debugger.WatchPad">
+        <State />
+      </Pad>
       <Pad Id="MonoDevelop.UnitTesting.TestPad">
         <State name="__root__">
-          <Node name="ArrayList" expanded="True" selected="True">
-            <Node name="ArrayListTest.Test" expanded="True">
+          <Node name="ArrayList" expanded="True">
+            <Node name="ArrayListTest.Test" expanded="True" selected="True">
               <Node name="ArrayListTest.Test" expanded="True">
                 <Node name="TestsArrayList" expanded="True" />
               </Node>

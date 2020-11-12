@@ -16,7 +16,7 @@ namespace DataStructure
         {
             get
             {
-                if (i >= Length || i < 0)
+                if (i > Length || i < 0)
                 {
                     throw new IndexOutOfRangeException();
                 }
@@ -35,7 +35,7 @@ namespace DataStructure
         //Конструктор
         public ArrayList()
         {
-            _array = new int[9];
+            _array = new int[1];
             Length = 0;
         }
 
@@ -110,7 +110,7 @@ namespace DataStructure
                 IncreaseLength();
             }
 
-            if (index > Length-1 || index < 0)
+            if (index > Length || index < 0)
             {
                 throw new IndexOutOfRangeException();
             }
@@ -144,7 +144,7 @@ namespace DataStructure
         //Удаление c конца однин элемент
         public void RemoveFromEnd()
         {
-            RemoveFromIndexItem(Length - 1);
+            RemoveFromIndexItem(Length-1);
             if (_array.Length > Length / 2 - 1)
             {
                 DecreaseLength();
@@ -179,7 +179,7 @@ namespace DataStructure
                 }
                 else
                 {
-                    DisplacementRight(index);
+                    DisplacementLeft(index);
                     Length--;
                 }
 
@@ -484,7 +484,7 @@ namespace DataStructure
         private void DecreaseLength(int number = 1)
         {
             int newLength = _array.Length;
-            while (newLength >= 2 * (Length - number))
+            while (newLength <= 2 * (Length - number))
             {
                 newLength = newLength * 2 / 3 + 1;
             }
