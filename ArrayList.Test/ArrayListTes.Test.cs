@@ -215,7 +215,7 @@ namespace ArrayListTest.Test
         [TestCase(1, 3)]
         [TestCase(2, 2)]
 
-        public void GetMaxIndex(int n, int expMaxIndex)
+        public void GetMaxIndexTest(int n, int expMaxIndex)
         {
             SetMock(n);
             ArrayList actual = new ArrayList(arrayMock);
@@ -231,12 +231,12 @@ namespace ArrayListTest.Test
         [TestCase(1, 0)]
         [TestCase(2, 1)]
 
-        public void GetMinIndex(int n, int expMinIndex)
+        public void GetMinIndexTest(int n, int expMinIndex)
         {
             SetMock(n);
             ArrayList actual = new ArrayList(arrayMock);
             int expected = expMinIndex;
-            int result = actual.GetMaxIndex();
+            int result = actual.GetMinIndex();
 
             Assert.AreEqual(expected, result);
         }

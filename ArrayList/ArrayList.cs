@@ -105,7 +105,7 @@ namespace DataStructure
         //Добавление значения по индексу
         public void AddItemByIndex(int index, int value)
         {
-            if (_array.Length <= Length)
+            if (Length <= Length)
             {
                 IncreaseLength();
             }
@@ -174,7 +174,7 @@ namespace DataStructure
             RemoveFromIndexItem(0);
         }
 
-        //Удаление по индексу элемента Переписать!!!
+        //Удаление по индексу элемента 
         public void RemoveFromIndexItem(int index)
         {
             if(index > Length || index < 0)
@@ -242,7 +242,7 @@ namespace DataStructure
             {
                 if (value == _array[i])
                 {
-                    index += i;
+                    index = i;
                 }
             }
             return index;
@@ -276,11 +276,13 @@ namespace DataStructure
         //Поиск значения минимального элемента
         public int GetMinItem()
         {
-            int min = _array[0];
+            int index = 0;
+            int min = _array[index];
             for (int i = 0; i < Length; i++)
             {
                 if (min <= _array[i])
                 {
+                    index = i;
                     min = _array[i];
                 }
             }
@@ -291,7 +293,7 @@ namespace DataStructure
         public int GetMaxIndex()
         {
             int IndexMaxItem = 0;
-            int maxItem = _array[0];
+            int maxItem = _array[IndexMaxItem];
             for (int i = 0; i < Length; i++)
             {
                 if (_array[i] > maxItem)
@@ -305,16 +307,16 @@ namespace DataStructure
         //Поиск индекса минимального значения элемента
         public int GetMinIndex()
         {
-            int indexMinItem = 0;
-            int minItem = _array[0];
+            int minIndex = 0; ;
+            int minItem = _array[minIndex];
             for (int i = 0; i < Length; i++)
             {
                 if (_array[i] <= minItem)
                 {
-                    indexMinItem = i;
+                    minIndex = i;
                 }
             }
-            return indexMinItem;
+            return minIndex;
         }
 
         //Сортировка по возрастанию
@@ -354,7 +356,7 @@ namespace DataStructure
         //добавление массива в конец
         public void AddArrayEnd(int[] array)
         {
-            if (_array.Length <= Length + array.Length)
+            if (_array.Length <= Length + array.Length - 2)
             {
                 IncreaseLength();
             }
@@ -368,7 +370,7 @@ namespace DataStructure
         //добавление массива в начало
         public void AddArrayStart(int[] array)
         {
-            if (_array.Length <= Length + array.Length)
+            if (_array.Length <= Length + array.Length - 2)
             {
                 IncreaseLength();
             }
@@ -388,13 +390,13 @@ namespace DataStructure
             }
             else
             {
-                if (_array.Length <= Length + array.Length)
+                if (_array.Length <= Length + array.Length - 2)
                 {
                     IncreaseLength();
                 }
                 for (int i = 0; i < array.Length; i++)
                 {
-                    DisplacementRight(index);
+                    DisplacementLeft(index);//was right
                     _array[index] = array[i];
                     Length++;
                 }
@@ -404,18 +406,17 @@ namespace DataStructure
         //удаление из конца N элементов
         public void RemoveEndItems(int quantity = 1)
         {
-            if (quantity > Length || quantity < 0)
+            if (quantity > Length-1 || quantity < 0)
             {
                 throw new Exception("There are fewer items in the list than you want to delete, or you used  0,  int quantity != 0, quantuty > 0");
             }
             else
             {
+                RemoveFromIndexItems(Length - 1, quantity);
                 if (_array.Length <= Length / 2 - 1)
                 {
                     DecreaseLength();
                 }
-
-                RemoveFromIndexItems(Length - 1, quantity);
             }
         }
 
@@ -428,12 +429,12 @@ namespace DataStructure
             }
             else
             {
+                RemoveFromIndexItems(0, quantity);
                 if (_array.Length <= Length / 2 - 1)
                 {
                     DecreaseLength();
                 }
 
-                RemoveFromIndexItems(0, quantity);
                 
             }
         }
@@ -441,7 +442,7 @@ namespace DataStructure
         //удаление по индексу N элементов
         public void RemoveFromIndexItems(int index, int quantity = 1)
         {
-            if (index > Length || index < 0 || quantity > Length)
+            if (index > Length - 1 || index < 0 || quantity > Length - 1)
             {
                 throw new IndexOutOfRangeException();
             }
@@ -456,7 +457,7 @@ namespace DataStructure
 
                     if (index == 0)
                     {
-                        for (int k = 0; k < Length - 1; k++)
+                        for (int k = 0; k < Length; k++)
                         {
                             _array[k] = _array[k + 1];
                         }
@@ -468,13 +469,13 @@ namespace DataStructure
                     }
                     else
                     {
-                        int[] newArray = new int[_array.Length - 1];
+                        int[] newArray = new int[_array.Length ];
                         for (int j = 0; j < index; j++)
                         {
                             newArray[j] = _array[j];
                         }
 
-                        for (int l = index + 1; l < Length; l++)
+                        for (int l = index; l < Length; l++)// index + 1
                         {
                             newArray[l - 1] = _array[l];
                         }
@@ -521,9 +522,17 @@ namespace DataStructure
         //Смещение значений в право
         private void DisplacementRight(int index)
         {
-            for (int j = Length; j > index; j--)
+            for (int j = Length - 1; j > index; j--)
             {
                 _array[j] = _array[j - 1];
+            }
+        }
+
+        private void DisplacementLeft(int index)
+        {
+            for (int j = index; j > Length; j++)
+            {
+                _array[j] = _array[j + 1];
             }
         }
     }

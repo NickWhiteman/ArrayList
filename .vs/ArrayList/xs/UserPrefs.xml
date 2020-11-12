@@ -1,31 +1,20 @@
 ﻿<Properties GitUserInfo="UsingMD" StartupConfiguration="{C07918AD-0FFA-41FB-906B-1BB206100269}|Default">
   <MonoDevelop.Ide.ItemProperties.ArrayListTest.Test PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="ArrayList.Test/ArrayListTes.Test.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="ArrayList/ArrayList.cs">
     <Files>
-      <File FileName="ArrayList/ArrayList.cs" Line="230" Column="17" />
-      <File FileName="../TestingMethodOnProject/TestingMethodOnProject/Program.cs" Line="1" Column="1" />
-      <File FileName="ArrayList.Test/ArrayListTes.Test.cs" Line="157" Column="57" />
+      <File FileName="ArrayList/ArrayList.cs" Line="471" Column="50" />
+      <File FileName="../TestingMethodOnProject/TestingMethodOnProject/Program.cs" />
+      <File FileName="ArrayList.Test/ArrayListTes.Test.cs" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="ArrayList" expanded="True">
-            <Node name="ArrayList" expanded="True" />
-            <Node name="ArrayListTest.Test" expanded="True">
-              <Node name="ArrayListTes.Test.cs" selected="True" />
+            <Node name="ArrayList" expanded="True">
+              <Node name="ArrayList.cs" selected="True" />
             </Node>
+            <Node name="ArrayListTest.Test" expanded="True" />
             <Node name="TestingMethodOnProject" expanded="True" />
-          </Node>
-        </State>
-      </Pad>
-      <Pad Id="MonoDevelop.UnitTesting.TestPad">
-        <State name="__root__">
-          <Node name="ArrayList" expanded="True">
-            <Node name="ArrayListTest.Test" expanded="True" selected="True">
-              <Node name="ArrayListTest.Test" expanded="True">
-                <Node name="TestsArrayList" expanded="True" />
-              </Node>
-            </Node>
           </Node>
         </State>
       </Pad>
