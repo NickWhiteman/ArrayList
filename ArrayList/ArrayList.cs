@@ -394,11 +394,12 @@ namespace DataStructure
                 {
                     IncreaseLength();
                 }
+
                 for (int i = 0; i < array.Length; i++)
                 {
                     DisplacementRight(index);
                     _array[index] = array[i];
-                    Length++;
+                    Length += array.Length;
                 }
             }
         }
@@ -413,7 +414,6 @@ namespace DataStructure
             else
             {
                 RemoveFromIndexItems(Length - 1, quantity);
-                Length -= quantity;
                 if (_array.Length <= Length / 2 - 1)
                 {
                     DecreaseLength();
@@ -435,9 +435,6 @@ namespace DataStructure
                 {
                     DecreaseLength();
                 }
-                Length -= quantity;
-
-
             }
         }
 
@@ -452,11 +449,6 @@ namespace DataStructure
             {
                 for (int i = 0; i < quantity; i++)
                 {
-                    if (_array.Length <= Length / 2 - 1)
-                    {
-                        DecreaseLength();
-                    }
-
                     if (index == 0)
                     {
                         for (int k = 0; k < Length; k++)
@@ -471,18 +463,14 @@ namespace DataStructure
                     }
                     else
                     {
-                        int[] newArray = new int[_array.Length ];
-                        for (int j = 0; j < index; j++)
-                        {
-                            newArray[j] = _array[j];
-                        }
+                        DisplacementLeft(index);
+                        Length--;
 
-                        for (int l = index; l < Length; l++)// index + 1
-                        {
-                            newArray[l - 1] = _array[l];
-                        }
-                        _array = newArray;
-                        
+                    }
+
+                    if (_array.Length <= Length / 2 - 1)
+                    {
+                        DecreaseLength();
                     }
 
                 }
@@ -532,7 +520,7 @@ namespace DataStructure
 
         private void DisplacementLeft(int index)
         {
-            for (int j = index; j > Length; j++)
+            for (int j = index; j < Length; j++)
             {
                 _array[j] = _array[j + 1];
             }
