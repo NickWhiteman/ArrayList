@@ -118,20 +118,16 @@ namespace DataStructure
             {
                 if (index == 0)
                 {
-                    DisplacementRight(index);
+                    DisplacementLeft(index);
                     _array[index] = value;
                 }
                 else if (index == Length)
                 {
                     _array[index] = value;
                 }
-                else if (Length == 0)
-                {
-                    _array[0] = value;
-                }
                 else
                 {
-                    for (int i = Length; i > index; i--)
+                    for (int i = Length-1; i > index; i--)
                     {
                         _array[i] = _array[i - 1];
                     }
@@ -190,7 +186,7 @@ namespace DataStructure
 
                 if (index == 0)
                 {
-                    for (int i = 0; i < Length - 1; i++)
+                    for (int i = 0; i < Length; i++)
                     {
                         _array[i] = _array[i + 1];
                     }
@@ -201,17 +197,7 @@ namespace DataStructure
                 }
                 else
                 {
-                    int[] newArray = new int[_array.Length - 1];
-                    for (int i = 0; i < index; i++)
-                    {
-                        newArray[i] = _array[i];
-                    }
-
-                    for (int j = index + 1; j < Length; j++)
-                    {
-                        newArray[j - 1] = _array[j];
-                    }
-                    _array = newArray;
+                    DisplacementLeft(index);
                 }
 
                 Length--;
@@ -223,14 +209,14 @@ namespace DataStructure
         public int AccessByIndex(int index)
         {
             int n;
-            if (index > Length || index < 0)
+            if (index > Length - 1 || index < 0)
             {
                 throw new IndexOutOfRangeException();
             }
             else
             {
-                n = _array[index];
-                return n;
+                
+                return _array[index];
             }
         }
 
@@ -356,7 +342,7 @@ namespace DataStructure
         //добавление массива в конец
         public void AddArrayEnd(int[] array)
         {
-            if (_array.Length <= Length + array.Length - 2)
+            if (_array.Length <= Length + array.Length)
             {
                 IncreaseLength();
             }
@@ -372,7 +358,7 @@ namespace DataStructure
         //добавление массива в начало
         public void AddArrayStart(int[] array)
         {
-            if (_array.Length <= Length + array.Length - 2)
+            if (_array.Length <= Length + array.Length)
             {
                 IncreaseLength();
             }
@@ -390,14 +376,14 @@ namespace DataStructure
             }
             else
             {
-                if (_array.Length <= Length + array.Length - 2)
+                if (_array.Length <= Length + array.Length)
                 {
                     IncreaseLength();
                 }
 
                 for (int i = 0; i < array.Length; i++)
                 {
-                    DisplacementRight(index);
+                    DisplacementLeft(index);
                     _array[index] = array[i];
                     Length += array.Length;
                 }
