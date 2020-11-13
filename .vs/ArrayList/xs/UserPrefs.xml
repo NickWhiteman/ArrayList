@@ -1,29 +1,31 @@
 ﻿<Properties GitUserInfo="UsingMD" StartupConfiguration="{C07918AD-0FFA-41FB-906B-1BB206100269}|Default">
   <MonoDevelop.Ide.ItemProperties.ArrayListTest.Test PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="ArrayList/ArrayList.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="ArrayList.Test/ArrayListTes.Test.cs">
     <Files>
-      <File FileName="ArrayList/ArrayList.cs" Line="459" Column="48" />
-      <File FileName="../TestingMethodOnProject/TestingMethodOnProject/Program.cs" Line="26" Column="1" />
-      <File FileName="ArrayList.Test/ArrayListTes.Test.cs" Line="24" Column="45" />
+      <File FileName="ArrayList/ArrayList.cs" Line="203" Column="41" />
+      <File FileName="../TestingMethodOnProject/TestingMethodOnProject/Program.cs" Line="17" Column="53" />
+      <File FileName="ArrayList.Test/ArrayListTes.Test.cs" Line="27" Column="68" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="ArrayList" expanded="True">
-            <Node name="ArrayList" expanded="True">
-              <Node name="ArrayList.cs" selected="True" />
+            <Node name="ArrayList" expanded="True" />
+            <Node name="ArrayListTest.Test" expanded="True">
+              <Node name="ArrayListTes.Test.cs" selected="True" />
             </Node>
-            <Node name="ArrayListTest.Test" expanded="True" />
             <Node name="TestingMethodOnProject" expanded="True" />
           </Node>
         </State>
       </Pad>
       <Pad Id="MonoDevelop.UnitTesting.TestPad">
         <State name="__root__">
-          <Node name="ArrayList" expanded="True" selected="True">
+          <Node name="ArrayList" expanded="True">
             <Node name="ArrayListTest.Test" expanded="True">
               <Node name="ArrayListTest.Test" expanded="True">
-                <Node name="TestsArrayList" expanded="True" />
+                <Node name="TestsArrayList" expanded="True">
+                  <Node name="ArrayListNegative([])" selected="True" />
+                </Node>
               </Node>
             </Node>
           </Node>
@@ -39,7 +41,8 @@
   <MonoDevelop.Ide.ItemProperties.TestingMethodOnProject PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
-      <Breakpoint file="/Users/nikitaromanov/Projects/TestingMethodOnProject/TestingMethodOnProject/Program.cs" line="10" column="1" />
+      <Breakpoint file="/Users/nikitaromanov/Projects/TestingMethodOnProject/TestingMethodOnProject/Program.cs" line="11" column="1" />
+      <Breakpoint file="/Users/nikitaromanov/Projects/ArrayList/ArrayList/ArrayList.cs" relfile="ArrayList/ArrayList.cs" line="196" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />

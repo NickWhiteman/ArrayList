@@ -111,6 +111,22 @@ namespace ArrayListTest.Test
         }
 
 
+        //[TestCase(1, 1, new int[] { 2, 4, 6, 3 })]
+        //[TestCase(2, 3, new int[] { 0, 4, 2 })]
+        //[TestCase(3, 43,new int[] { 12 })]
+        //[TestCase(4, 1,new int[] { })]
+
+        //public void RemoveFromItem(int n, int item, int[] expArr)
+        //{
+        //    SetMock(n);
+        //    ArrayList actual = new ArrayList(arrayMock);
+        //    ArrayList expected = new ArrayList(expArr);
+        //    actual.RemoveFromItem(item);
+
+        //    Assert.AreEqual(expected, actual);
+        //}
+
+
 
 
         [TestCase(1, new int[] { 2, 4, 6, 3 })]

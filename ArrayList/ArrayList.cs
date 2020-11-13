@@ -193,6 +193,19 @@ namespace DataStructure
             
         }
 
+        public void RemoveFromItem(int item)
+        {
+            for (int i = 0; i < Length; i++)
+            {
+                if (_array[i] == item)
+                {
+                    RemoveFromIndexItem(i);
+                    DisplacementLeft(i);
+                    Length--;
+                }
+            }
+        }
+
         //Доступ по индексу
         public int AccessByIndex(int index)
         {
