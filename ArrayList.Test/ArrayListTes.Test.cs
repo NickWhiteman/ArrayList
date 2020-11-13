@@ -122,7 +122,7 @@ namespace ArrayListTest.Test
             SetMock(n);
             ArrayList actual = new ArrayList(arrayMock);
             ArrayList expected = new ArrayList(expArr);
-            actual.RemoveFromEnd();
+            actual.RemoveFromStart();
 
             Assert.AreEqual(expected, actual);
         }
@@ -156,9 +156,9 @@ namespace ArrayListTest.Test
             SetMock(n);
             ArrayList actual = new ArrayList(arrayMock);
             int expected = expectedNumber;
-            actual.AccessByIndex(i);
+            int result = actual[i];
 
-            Assert.AreEqual(expected, actual);
+            Assert.AreEqual(expected, result);
         }
 
 
@@ -277,9 +277,9 @@ namespace ArrayListTest.Test
 
 
 
-        [TestCase(1, new int[] { 12, 2 }, new int[] { 2, 12, 1, 2, 4, 6, 3 })]
-        [TestCase(2, new int[] { 1, 4 }, new int[] { 4, 1, 3, 0, 4, 2 })]
-        [TestCase(4, new int[] { 23, 13 }, new int[] { 13, 23, 1, 3, 6, 3, 12, 13, 23 })]
+        [TestCase(1, new int[] { 12, 2 }, new int[] { 12, 2, 1, 2, 4, 6, 3 })]
+        [TestCase(2, new int[] { 1, 4 }, new int[] { 1, 4, 3, 0, 4, 2 })]
+        [TestCase(4, new int[] { 23, 13 }, new int[] { 23, 13, 1, 3, 6, 3, 12, 13, 23 })]
 
         public void AddArrayStart(int n, int[] array, int[] expArr)
         {
@@ -311,9 +311,9 @@ namespace ArrayListTest.Test
 
 
 
-        [TestCase(1, new int[] { 12, 2 }, 1, new int[] { 1, 2, 12, 2, 4, 6, 3 })]
-        [TestCase(2, new int[] { 1, 4 }, 0, new int[] { 4, 1, 3, 0, 4, 2 })]
-        [TestCase(4, new int[] { 23, 13 }, 4, new int[] { 1, 3, 6, 3, 13, 23, 12, 13, 23 })]
+        [TestCase(1, new int[] { 12, 2 }, 1, new int[] { 1, 12, 2, 2, 4, 6, 3 })]
+        [TestCase(2, new int[] { 1, 4 }, 0, new int[] { 1, 4, 3, 0, 4, 2 })]
+        [TestCase(4, new int[] { 23, 13 }, 4, new int[] { 1, 3, 6, 3, 23, 13, 12, 13, 23 })]
 
         public void AddArrayByIndex(int n, int[] array, int index, int[] expArr)
         {
@@ -330,7 +330,7 @@ namespace ArrayListTest.Test
 
 
         [TestCase(1, 2, new int[] { 1, 2, 4 })]
-        [TestCase(4, 4, new int[] { 1, 3, 6 })]
+        [TestCase(4, 3, new int[] { 1, 3, 6, 3})]
 
         public void RemoveEndItems(int n, int quantity, int[] expArr)
         {
@@ -361,8 +361,8 @@ namespace ArrayListTest.Test
 
 
 
-        [TestCase(1, 2, 2, new int[] { 1, 2, 4 })]
-        [TestCase(2, 1, 1, new int[] { 3, 0, 2 })]
+        [TestCase(1, 2, 2, new int[] { 1, 2, 3 })]
+        [TestCase(2, 1, 1, new int[] { 3, 4, 2 })]
 
         public void RemoveFromIndexItems(int n, int index, int quantity, int[] expArr)
         {
@@ -376,7 +376,6 @@ namespace ArrayListTest.Test
 
         //NegativeTests:
 
-        [TestCase(new int[] { })]
         [TestCase(new int[] { })]
 
         public void ArrayListNegative(int[] array)
